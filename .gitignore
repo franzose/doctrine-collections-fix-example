@@ -1,4 +1,5 @@
 .idea/
+docker/postgresql/
 vendor/
 proxy/
 .phpunit.result.cache
