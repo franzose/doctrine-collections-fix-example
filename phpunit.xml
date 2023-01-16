@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- https://phpunit.readthedocs.io/en/latest/configuration.html -->
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="vendor/phpunit/phpunit/phpunit.xsd"
+         colors="true"
+         bootstrap="vendor/autoload.php"
+>
+    <php>
+        <ini name="display_errors" value="1" />
+        <ini name="error_reporting" value="-1" />
+        <server name="DB_HOST" value="postgres" />
+        <server name="DB_PORT" value="5432" />
+        <server name="DB_USER" value="user" />
+        <server name="DB_PASSWORD" value="user" />
+        <server name="DB_NAME" value="noveo_article_test" />
+        <server name="DB_DRIVER" value="pdo_pgsql" />
+        <server name="DOCTRINE_SRC_DIR" value="./src" />
+        <server name="DOCTRINE_PROXY_DIR" value="./proxy" />
+        <server name="DOCTRINE_PROXY_NAMESPACE" value="HierarchyProxy\\" />
+    </php>
+
+    <testsuites>
+        <testsuite name="Project Test Suite">
+            <directory>tests</directory>
+        </testsuite>
+    </testsuites>
+</phpunit>

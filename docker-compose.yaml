@@ -1,0 +1,23 @@
+###############################################################################
+#                          Generated on phpdocker.io                          #
+###############################################################################
+version: '3.1'
+services:
+    postgres:
+        image: 'postgres:15-alpine'
+        volumes:
+            - './docker/postgresql:/var/lib/postgresql/data'
+        environment:
+            - POSTGRES_USER=user
+            - POSTGRES_PASSWORD=user
+            - POSTGRES_DB=hierarchy_article_test
+        ports:
+            - '5004:5432'
+    
+    php-fpm:
+        build: docker/php-fpm
+        working_dir: /app
+        volumes:
+            - '.:/app'
+        depends_on:
+            - postgres

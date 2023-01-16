@@ -1,0 +1,5 @@
+.idea/
+vendor/
+proxy/
+.phpunit.result.cache
+*.iml
